@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-size: 16pt;
+  display: flex;
+  box-sizing: border-box;
+}
+body h1 {
+  font-size: 24pt;
+}
+body .player {
+  text-align: center;
+  width: 25%;
+  min-width: 150px;
+}
+body .player ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+body .player ul li {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+body .player ul li img {
+  height: 200px;
+  margin: auto;
+  border: solid 1px #aaa;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+body .game {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-width: 300px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+body .game > div:first-of-type {
+  display: flex;
+  justify-content: center;
+  height: 75px;
+  flex-grow: 0;
+}
+body .game > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+}
+body .game > div:nth-of-type(2) span:first-of-type {
+  width: 100%;
+  height: 50px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: url("../images/arrow.svg") no-repeat 50% 50%;
+  background-size: auto 50px;
+}
+body .game > div:nth-of-type(2) span:last-of-type {
+  height: 300px;
+  width: 300px;
+  background: url("../images/suits.png") no-repeat 50% 50%;
+  background-size: contain;
+  border: solid #000 1.5px;
+  border-radius: 50%;
+}
+body .game > div:last-of-type {
+  flex-grow: 1;
+}
+body .player1cardMove1 {
+  animation: player1cardMove1 1.5s linear forwards;
+}
+@keyframes player1cardMove1 {
+  from {
+    transform: translateX(0px) rotateY(0deg);
+  }
+  to {
+    transform: translateX(50%) rotateY(90deg);
+  }
+}
+body .player2cardMove1 {
+  animation: player2cardMove1 1.5s linear forwards;
+}
+@keyframes player2cardMove1 {
+  from {
+    transform: translateX(0px) rotateY(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotateY(90deg);
+  }
+}
+body .player1cardMove2 {
+  animation: player1cardMove2 1.5s linear forwards;
+}
+@keyframes player1cardMove2 {
+  from {
+    transform: translateX(50%) rotateY(90deg);
+  }
+  to {
+    transform: translateX(100%) rotateY(0deg);
+  }
+}
+body .player2cardMove2 {
+  animation: player2cardMove2 1.5s linear forwards;
+  margin-right: 100%;
+}
+@keyframes player2cardMove2 {
+  from {
+    transform: translateX(-50%) rotateY(90deg);
+  }
+  to {
+    transform: translateX(-100%) rotateY(0deg);
+  }
+}
+body .player1wins {
+  left: 100%;
+  animation: win 1.5s linear;
+}
+body .player2wins {
+  right: 100%;
+  animation: win 1.5s linear;
+}
+@keyframes win {
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body .player1looses {
+  left: 100%;
+  animation: loose 1.5s linear;
+}
+body .player2looses {
+  right: 100%;
+  animation: loose 1.5s linear;
+}
+@keyframes loose {
+  100% {
+    transform: rotate(0);
+  }
+}
